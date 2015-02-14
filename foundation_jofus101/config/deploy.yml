@@ -13,3 +13,7 @@
 #   email: john@doe.net
 #   password: apassword
 #   # api_key: <your api key here>
+hosting:
+  host: jofus101-foundation.locomotivehosting.com
+  api_key: 16761510f6e72924b80e5d5ec31cde4ec3ed34ae
+#  ssl: true

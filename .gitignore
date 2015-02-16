@@ -7,6 +7,8 @@ tests
 *.rbc
 .bundle
 .config
+**/config/deploy.yml
+**/log
 .yardoc
 Gemfile.lock
 InstalledFiles

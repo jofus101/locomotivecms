@@ -53,11 +53,14 @@ meta_keywords: page_keyword
               %ul.nav.navbar-nav
                 %li{class: "{% if page.slug == 'index' %}active{% endif %}"}
                   %a{href: "/"} Home
+                {% nav "site", no_wrapper: true, active_class: "active" %}
 
       .row
         .col-md-10.col-md-offset-1.col-sm-12
           %h2 {{ page.title }}
+          {% block 'main' %}
           Coming Soon.
+          {% endblock %}
 
     %script{type: "text/javascript", src: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
     {{ 'bootstrap.min.js' | javascript_tag }}

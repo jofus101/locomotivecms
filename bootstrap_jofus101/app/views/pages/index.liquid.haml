@@ -25,6 +25,8 @@ meta_keywords: page_keyword
       {% endif %}
 
     {{ 'application.css' | stylesheet_tag }}
+    {{ 'styles.css' | stylesheet_tag }}
+
 
     /[if lt IE 9]
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,7 +36,7 @@ meta_keywords: page_keyword
     / %link{rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "/samples/apple-touch-icon-72x72-precomposed.png"}/
     / %link{rel: "apple-touch-icon-precomposed", href: "/samples/apple-touch-icon-precomposed.png"}/
 
-  %body
+  %body{class: "page-{{ page.slug }}"}
     .container
       .row
         .col-md-10.col-md-offset-1.col-sm-12

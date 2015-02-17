@@ -1,3 +1,7 @@
+body * {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* a nice frame for images */
 div.img-box {
   border-width: 5px;

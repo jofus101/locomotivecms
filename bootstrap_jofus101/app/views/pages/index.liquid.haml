@@ -1,6 +1,7 @@
 ---
-title: Home page
+title: Home
 published: true
+meta_keywords: page_keyword
 ---
 !!!
 %html{lang: "en"}
@@ -9,17 +10,18 @@ published: true
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
     %meta{name: "keywords", content: "{{site.meta_keywords}} {{page.meta_keywords}}"}
-    - if page.meta_description
-      %meta{name: "description", content: "{{page.meta_description}}"}
-    - else 
-      %meta{name: "description", content: "{{site.meta_description}}"}
+    {% if page.meta_description %}
+    %meta{name: "description", content: "{{page.meta_description}}", test: "{{site.meta_description}}"}
+    {% else %} 
+    %meta{name: "description", content: "{{site.meta_description}}"}
+    {% endif %}
     
     %title 
       {{page.title}} - {{ site.name }} |
-      - if page.seo_title
-        {{page.seo_title}}
-      - else
-        {{site.seo_title}}
+      / - if page.seo_title
+      /   {{page.seo_title}}
+      / - else
+      /   {{site.seo_title}}
 
     {{ 'application.css' | stylesheet_tag }}
 

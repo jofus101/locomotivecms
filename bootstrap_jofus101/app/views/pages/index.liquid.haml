@@ -35,4 +35,21 @@ meta_keywords: page_keyword
     / %link{rel: "apple-touch-icon-precomposed", href: "/samples/apple-touch-icon-precomposed.png"}/
 
   %body
-    Coming soon.
+    .container
+      .row
+        .col-md-10.col-md-offset-1.col-sm-12
+          %h1 {{site.name}}
+
+      .row
+        .col-md-10.col-md-offset-1.col-sm-12
+          %nav.navbar.navbar-default{role: "navigation"}
+            .navbar-header
+              %button.navbar-toggle{type: "button", "data-toggle" => "collapse", "data-target" => "#main-nav" }
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+            .collapse.navbar-collapse#main-nav
+              %ul.nav.navbar-nav
+                %li{class: "{% if page.slug == 'index' %}active{% endif %}"}
+                  hello

@@ -52,4 +52,12 @@ meta_keywords: page_keyword
             .collapse.navbar-collapse#main-nav
               %ul.nav.navbar-nav
                 %li{class: "{% if page.slug == 'index' %}active{% endif %}"}
-                  hello
+                  %a{href: "/"} Home
+
+      .row
+        .col-md-10.col-md-offset-1.col-sm-12
+          %h2 {{ page.title }}
+          Coming Soon.
+
+    %script{type: "text/javascript", src: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+    {{ 'bootstrap.min.js' | javascript_tag }}

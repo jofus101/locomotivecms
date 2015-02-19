@@ -31,10 +31,7 @@ Gyeongbokgung, Seoul
 {% endeditable_text %}
 {% endcapture %}
 {% capture photo %}{% editable_file "photo" %}/samples/pages/gyeongbokgung-full.jpg{% endeditable_file %}{% endcapture %}
-.img-box
-  %a{href: "{{ photo | theme_image_url | resize: '800x' }}"}
-    %img{src: "{{ photo | theme_image_url | resize: '400x' }}", alt: "{{ caption }}"}/
-  %p {{ caption }}
+{% include 'img_box' with caption, photo, size: "400x" %}
 {% endblock %}
 
 {% editable_text "about_body", rows: 20 %}

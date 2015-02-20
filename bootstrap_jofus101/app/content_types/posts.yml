@@ -5,16 +5,16 @@ name: Posts
 slug: posts
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Blog posts about travel
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title
 
 # Valid values: manually, created_at, updated_at, or the slug of any field
-order_by: manually
+order_by: posted_at
 
 # Valid values: asc (ascending) and desc (descending). Set to asc by default.
-# order_direction: asc
+order_direction: desc
 
 # Specify a field slug to group entries by that field in the back-office.
 # group_by: <your field>
@@ -31,42 +31,39 @@ fields:
     label: Title # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
     localized: false
 
 - posted_at: # The lowercase, underscored name of the field
-    label: true # Human readable name of the field
+    label: Posted at # Human readable name of the field
     type: date_time
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
     localized: false
 
 - tags: # The lowercase, underscored name of the field
     label: Tags # Human readable name of the field
     type: tags
     required: false
-    hint: Explanatory text displayed in the back office
     localized: false
 
 - teaser: # The lowercase, underscored name of the field
     label: Teaser # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: A short lead-in to the post displayed when listing posts
     localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+    text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - featured_image: # The lowercase, underscored name of the field
     label: Featured image # Human readable name of the field
     type: file
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: An image displayed next to the teaser when listing posts
     localized: false
 
 - body: # The lowercase, underscored name of the field
     label: Body # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: The full post text
     localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+    text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

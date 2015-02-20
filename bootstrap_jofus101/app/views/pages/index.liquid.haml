@@ -60,10 +60,16 @@ meta_keywords: page_keyword
 
       .row
         .col-md-10.col-md-offset-1.col-sm-12
+          {% if page.slug != "index" %}
           %h2 {{ page.title | escape}}
+          {% endif %}
           {% block 'main' %}
-          {% assign photo = "church.jpg" | theme_image_url %}
-          {% include 'img_box' with photo, caption: "Temppeliaukio Church, Helsinki", size: "1000x300#" %}
+          .jumbotron
+            %h1 Life's to short not to get away for awhile!
+            %p.sub-title Learn about cool places to see abroad, interesting things to eat, and little travel tips you won't believe you lived without.
+            %p
+              %a.btn.btn-primary.btn-lg{href: "/posts"}
+                Browse our articles
           {% endblock %}
 
     %script{type: "text/javascript", src: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}

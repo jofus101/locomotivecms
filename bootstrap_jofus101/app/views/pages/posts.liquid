@@ -43,6 +43,8 @@ position: 1
           </div>
         </div>
       </div>
+    {% cycle  '', '<div class="clearfix visible-sm">&nbsp;</div>' %}
+    {% cycle '', '', '<div class="clearfix hidden-sm hidden-xs">&nbsp;</div>'  %}
     {% endfor %}
   </div>
 {% endblock %}

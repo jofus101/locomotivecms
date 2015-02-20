@@ -19,6 +19,17 @@ body.page-posts div.post-listing {
   margin-bottom: 20px;
 }
 
+/* posts/content_type_template.liquid */
+article.post p.tags span {
+  margin-left: 10px;
+}
+
+article.post h3.posted-at {
+  font-size: 20px;
+  margin-top: 0px;
+  color: #999;
+}
+
 /* a nice frame for images */
 div.img-box {
   border-width: 5px;

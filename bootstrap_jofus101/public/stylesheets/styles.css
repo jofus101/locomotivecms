@@ -30,6 +30,10 @@ article.post h3.posted-at {
   color: #999;
 }
 
+div.photos div.img-box {
+  margin-bottom: 20px;
+}
+
 /* home page */
 body.page-index .jumbotron {
   color: #fff;

@@ -9,22 +9,39 @@ content_type: posts
 
 {% block main %}
 
-<article class="post">
-  <h3 class="posted-at">
-    Posted at {{ post.posted_at | localized_date: '%-I:%M %p' }} on {{ post.posted_at | localized_date: '%B, %-d %Y' }}
-  </h3>
+  <article class="post">
+    <h3 class="posted-at">
+      Posted at {{ post.posted_at | localized_date: '%-I:%M %p' }} on {{ post.posted_at | localized_date: '%B, %-d %Y' }}
+    </h3>
 
-  {% if post.tags %}
-    <p class="tags">
-      <i class="glyphicon glyphicon-tags"></i>
-      {% for tag in post.tags %}
-        <span class="label label-primary">{{ tag | escape }}</span>
-      {% endfor %}
-    </p>
+    {% if post.tags %}
+      <p class="tags">
+        <i class="glyphicon glyphicon-tags"></i>
+        {% for tag in post.tags %}
+          <span class="label label-primary">{{ tag | escape }}</span>
+        {% endfor %}
+      </p>
+    {% endif %}
+    <div class="body">
+      {{ post.body }}
+    </div>
+  </article>
+
+  {% if post.photos.size > 0 %}
+    <h3>Photos</h3>
+      <div class="photos row">
+        {% for photo in post.photos %}
+          <div class="photo col-xs-6 col-sm-4 col-md-3">
+            {% assign caption = photo.caption %}
+            {% assign size = '350x300#' %}
+            {% include 'img_box' with photo: photo.file, caption, size  %}
+          </div>
+          {% cycle  '', '<div class="clearfix visible-xs">&nbsp;</div>' %}
+          {% cycle '', '', '<div class="clearfix visible-sm ">&nbsp;</div>' %}
+          {% cycle '', '', '', '<div class="clearfix hidden-sm hidden-xs">&nbsp;</div>' %}
+        {% endfor %}
+      </div>
+    </div>
   {% endif %}
-  <div class="body">
-    {{ post.body }}
-  </div>
-</article>
 
 {% endblock %}
